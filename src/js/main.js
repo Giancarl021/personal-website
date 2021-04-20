@@ -1,6 +1,12 @@
 import '../sass/style.scss';
+import terminal from './terminal';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+async function init() {
+    const $term = document.getElementById('terminal');
+    const term = terminal($term);
+
+    term.write('Xalabaias');
+    term.subscribe(console.log);
+}
+
+document.addEventListener('DOMContentLoaded', init);
